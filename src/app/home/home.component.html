@@ -1,0 +1,212 @@
+<div class="container-fluid">
+    <form class="example-form" [formGroup]="registerForm">
+
+        <div class="row">
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    Employee Name :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput placeholder="Please enter employee name " formControlName="name">
+                </mat-form-field>
+            </div>
+
+            <div class="col-2">
+
+            </div>
+
+
+
+
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    Designation :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-select formControlName="designation">
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+
+            </div>
+
+
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    Salary :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput placeholder="Please enter salary " formControlName="salary">
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+
+            </div>
+
+
+
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    Email :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput placeholder="Please enter your email " formControlName="email">
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+
+            </div>
+
+
+
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    mobile :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput placeholder="Please enter your number " formControlName="mobile">
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+
+            </div>
+
+
+
+
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    Qualification :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-select formControlName="designation">
+                        <mat-option *ngFor="let qualification of qualification" [value]="qualification.value">
+                            {{qualification.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+
+            </div>
+
+
+
+
+            <div class="col-2">
+
+            </div>
+            <div class="col-3">
+                <h4 class="mt-2 mb-2">
+                    Manager :
+                </h4>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput placeholder="Manager" formControlName="manager">
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+    </form>
+
+    <div class="example-button-row">
+        <div class="col-md-12 text-center">
+            <button mat-raised-button  *ngIf="!editValue"  (click)="create()">Submit</button>
+            <button mat-raised-button  *ngIf="editValue"  (click)="edit()">Update</button>
+            <button mat-raised-button>Reset</button>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="container-fluid">
+        <h2><a href="#">Register Employee</a></h2>
+    </div>
+
+
+
+
+    <table>
+        <tbody>
+            <tr>
+
+                <th>Employee Name</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Qualification</th>
+                <th>Manager</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let item of PostData">
+                <td>{{item.name}}</td>
+                <td>{{item.designation}}</td>
+                <td>{{item.salary}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.qualification}}</td>
+                <td>{{ item.manager}}</td>
+                <td><button type="button" class="btb btn-light" (click)="append(item)">Edit</button> <button type="button"
+                        (click)="delete(item)" class="btb btn-light">Delete</button></td>
+
+
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    hi
+
+</div>
